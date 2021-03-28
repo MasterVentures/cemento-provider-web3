@@ -1,7 +1,7 @@
 {
-  "name": "@decent-bet/solido-provider-web3",
+  "name": "@decent-bet/cemento-provider-web3",
   "version": "1.0.4",
-  "description": "Solido Web3 provider",
+  "description": "Cemento Web3 provider",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "directories": {
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decent-bet/solido-provider-web3.git"
+    "url": "git+https://github.com/decent-bet/cemento-provider-web3.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/decent-bet/solido-provider-web3/issues"
+    "url": "https://github.com/decent-bet/cemento-provider-web3/issues"
   },
-  "homepage": "https://github.com/decent-bet/solido-provider-web3#readme",
+  "homepage": "https://github.com/decent-bet/cemento-provider-web3#readme",
   "devDependencies": {
     "@types/jasmine": "^3.3.12",
     "@types/node": "^11.12.0",
@@ -33,7 +33,7 @@
     "nodemon": "^1.18.10",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.4000",
-    "@decent-bet/solido": "1.0.0"
+    "@decent-bet/cemento": "1.0.0"
   },
   "dependencies": {
     "rxjs": "^6.5.2",
@@ -41,6 +41,6 @@
     "web3-core-helpers": "^1.0.0-beta.55"
   },
   "peerDependencies": {
-    "@decent-bet/solido": "1.0.0"
+    "@decent-bet/cemento": "1.0.0"
   }
 }

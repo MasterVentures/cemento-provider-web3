@@ -4,17 +4,17 @@ import {
   IMethodOrEventCall,
   EventFilter,
   ProviderInstance,
-  SolidoProviderType
-} from '@decent-bet/solido';
+  CementoProviderType
+} from '@decent-bet/cemento';
 import { Web3Signer } from './Web3Signer';
 import { Web3Settings } from './Web3Settings';
-import { SolidoProvider } from '@decent-bet/solido';
-import { SolidoContract, SolidoSigner } from '@decent-bet/solido';
-import { SolidoTopic } from '@decent-bet/solido';
+import { CementoProvider } from '@decent-bet/cemento';
+import { CementoContract, CementoSigner } from '@decent-bet/cemento';
+import { CementoTopic } from '@decent-bet/cemento';
 /**
- * Web3Plugin provider for Solido
+ * Web3Plugin provider for Cemento
  */
-export class Web3Plugin extends SolidoProvider implements SolidoContract {
+export class Web3Plugin extends CementoProvider implements CementoContract {
   private web3: Web3;
   public network: string;
   private instance: any;
@@ -22,8 +22,8 @@ export class Web3Plugin extends SolidoProvider implements SolidoContract {
   public address: string;
   private privateKey: string;
 
-  public getProviderType(): SolidoProviderType {
-    return SolidoProviderType.Web3;
+  public getProviderType(): CementoProviderType {
+    return CementoProviderType.Web3;
   }
 
   onReady<T>(settings: T & Web3Settings) {
@@ -69,7 +69,7 @@ export class Web3Plugin extends SolidoProvider implements SolidoContract {
     methodCall: any,
     options: IMethodOrEventCall,
     args: any[]
-  ): Promise<SolidoSigner> {
+  ): Promise<CementoSigner> {
     let gas = options.gas;
 
     if (!options.gas) gas = 1000000;
@@ -132,7 +132,7 @@ export class Web3Plugin extends SolidoProvider implements SolidoContract {
       }
 
       if (topics) {
-        options.topics = (topics as SolidoTopic).get();
+        options.topics = (topics as CementoTopic).get();
       }
 
       options.order = order || 'desc';

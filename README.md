@@ -1,2 +1,2 @@
-# solido-provider-web3
-Solido provider for web3 (ethereum)
+# cemento-provider-web3
+Cemento provider for web3 (ethereum)
