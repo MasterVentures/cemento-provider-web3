@@ -1,7 +1,7 @@
-import { SolidoSigner } from '@decent-bet/solido';
+import { CementoSigner } from '@decent-bet/cemento';
 
 
-export class Web3Signer implements SolidoSigner {
+export class Web3Signer implements CementoSigner {
     gas = 0;
     constructor(private web3: any, private fn, private from, options) {
         this.gas = options.gas;

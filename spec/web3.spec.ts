@@ -1,6 +1,6 @@
 import 'jasmine';
-import { SolidoContract, SolidoProvider, SolidoModule, IMethodOrEventCall, Read, Write, EventFilterOptions, GetEvents } from '@decent-bet/solido';
-import { Web3Plugin, Web3Settings, Web3SolidoTopic } from '../src';
+import { CementoContract, CementoProvider, CementoModule, IMethodOrEventCall, Read, Write, EventFilterOptions, GetEvents } from '@decent-bet/cemento';
+import { Web3Plugin, Web3Settings, Web3CementoTopic } from '../src';
 const Web3 = require('web3');
 const CocoTokenImport = require('./CocoToken.json')
 
@@ -27,10 +27,10 @@ describe('Web3Provider', () => {
                     }
                 }
             } as any;
-            // Create Solido Module
+            // Create Cemento Module
             console.log("#################################");
-            console.log("web3.spec.ts -> Create Solido Module");
-            const module = new SolidoModule([
+            console.log("web3.spec.ts -> Create Cemento Module");
+            const module = new CementoModule([
                 {
                     name: 'CocoToken',
                     import: {
@@ -65,7 +65,7 @@ describe('Web3Provider', () => {
         console.log("web3.spec.ts -> should generate topics for Connex");
         it('should generate topics for Connex', async () => {
             console.log("0*******************");
-            const topics = new Web3SolidoTopic();
+            const topics = new Web3CementoTopic();
 
             const seq = topics
                 .topic('0xc')

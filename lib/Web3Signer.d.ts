@@ -1,5 +1,5 @@
-import { SolidoSigner } from '@decent-bet/solido';
-export declare class Web3Signer implements SolidoSigner {
+import { CementoSigner } from '@decent-bet/cemento';
+export declare class Web3Signer implements CementoSigner {
     private web3;
     private fn;
     private from;
