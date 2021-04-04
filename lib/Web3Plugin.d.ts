@@ -1,7 +1,7 @@
-import { IMethodOrEventCall, EventFilter, ProviderInstance, CementoProviderType } from '@decent-bet/cemento';
+import { IMethodOrEventCall, EventFilter, ProviderInstance, CementoProviderType } from '@MasterVentures/cemento';
 import { Web3Settings } from './Web3Settings';
-import { CementoProvider } from '@decent-bet/cemento';
-import { CementoContract, CementoSigner } from '@decent-bet/cemento';
+import { CementoProvider } from '@MasterVentures/cemento';
+import { CementoContract, CementoSigner } from '@MasterVentures/cemento';
 export declare class Web3Plugin extends CementoProvider implements CementoContract {
     private web3;
     network: string;
