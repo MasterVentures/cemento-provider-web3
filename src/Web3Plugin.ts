@@ -5,12 +5,12 @@ import {
   EventFilter,
   ProviderInstance,
   CementoProviderType
-} from '@MasterVentures/cemento';
+} from '@decent-bet/cemento';
 import { Web3Signer } from './Web3Signer';
 import { Web3Settings } from './Web3Settings';
-import { CementoProvider } from '@MasterVentures/cemento';
-import { CementoContract, CementoSigner } from '@MasterVentures/cemento';
-import { CementoTopic } from '@MasterVentures/cemento';
+import { CementoProvider } from '@decent-bet/cemento';
+import { CementoContract, CementoSigner } from '@decent-bet/cemento';
+import { CementoTopic } from '@decent-bet/cemento';
 /**
  * Web3Plugin provider for Cemento
  */

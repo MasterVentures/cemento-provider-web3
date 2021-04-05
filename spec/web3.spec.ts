@@ -1,5 +1,5 @@
 import 'jasmine';
-import { CementoContract, CementoProvider, CementoModule, IMethodOrEventCall, Read, Write, EventFilterOptions, GetEvents } from '@MasterVentures/cemento';
+import { CementoContract, CementoProvider, CementoModule, IMethodOrEventCall, Read, Write, EventFilterOptions, GetEvents } from '@decent-bet/cemento';
 import { Web3Plugin, Web3Settings, Web3CementoTopic } from '../src';
 const Web3 = require('web3');
 const CocoTokenImport = require('./CocoToken.json')

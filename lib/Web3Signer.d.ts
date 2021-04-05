@@ -1,4 +1,4 @@
-import { CementoSigner } from '@MasterVentures/cemento';
+import { CementoSigner } from '@decent-bet/cemento';
 export declare class Web3Signer implements CementoSigner {
     private web3;
     private fn;

@@ -1,5 +1,5 @@
 {
-  "name": "@MasterVentures/cemento-provider-web3",
+  "name": "@decent-bet/cemento-provider-web3",
   "version": "1.0.4",
   "description": "Cemento Web3 provider",
   "main": "lib/index.js",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/MasterVentures/cemento-provider-web3#readme",
   "devDependencies": {
-    "@MasterVentures/cemento": "1.0.0",
+    "@decent-bet/cemento": "1.0.0",
     "@types/jasmine": "^3.3.12",
     "@types/node": "^11.12.0",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
@@ -41,6 +41,6 @@
     "web3-core-helpers": "^1.0.0-beta.55"
   },
   "peerDependencies": {
-    "@MasterVentures/cemento": "1.0.0"
+    "@decent-bet/cemento": "1.0.0"
   }
 }

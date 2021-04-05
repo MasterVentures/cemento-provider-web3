@@ -1,4 +1,4 @@
-import { CementoTopic } from '@MasterVentures/cemento';
+import { CementoTopic } from '@decent-bet/cemento';
 export declare class Web3CementoTopic implements CementoTopic {
     private next;
     constructor();
