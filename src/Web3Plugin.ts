@@ -15,6 +15,7 @@ import { CementoTopic } from '@decent-bet/cemento';
  * Web3Plugin provider for Cemento
  */
 export class Web3Plugin extends CementoProvider implements CementoContract {
+
   private web3: Web3;
   public network: string;
   private instance: any;
@@ -25,7 +26,9 @@ export class Web3Plugin extends CementoProvider implements CementoContract {
   public getProviderType(): CementoProviderType {
     return CementoProviderType.Web3;
   }
-
+  describe(): string {
+    throw new Error('Method not implemented.');
+  }
   onReady<T>(settings: T & Web3Settings) {
     console.log("Web3Plugin->onReady");
     const { privateKey, web3, network, defaultAccount } = settings;
