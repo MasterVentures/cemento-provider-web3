@@ -1,4 +1,4 @@
-import { CementoTopic } from '@decent-bet/cemento';
+import { CementoTopic } from '@paid-network/cemento';
 
 export class Web3CementoTopic  implements CementoTopic  {
     private next = [];

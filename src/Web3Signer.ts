@@ -1,4 +1,4 @@
-import { CementoSigner } from '@decent-bet/cemento';
+import { CementoSigner } from '@paid-network/cemento';
 
 
 export class Web3Signer implements CementoSigner {
