@@ -105,8 +105,6 @@ describe('Web3Provider', () => {
             thunk(obj, 'transfer');
             expect((obj as any).transfer).toBeDefined();
             (obj as any).transfer([]);
-            //expect(obj.getMethod.calls.count()).toBe(1);
-            //expect(obj.prepareSigning.calls.count()).toBe(1);
         });
         console.log("web3.spec.ts -> should prepare signing and call signTransaction");
         it('should prepare signing and call signTransaction', async () => {
