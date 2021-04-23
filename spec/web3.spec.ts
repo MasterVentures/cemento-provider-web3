@@ -1,5 +1,5 @@
 import 'jasmine';
-import { CementoContract, CementoProvider, CementoModule, IMethodOrEventCall, Read, Write, EventFilterOptions, GetEvents } from '@decent-bet/cemento';
+import { CementoContract, CementoProvider, CementoModule, IMethodOrEventCall, Read, Write, EventFilterOptions, GetEvents } from '@paid-network/cemento';
 import { Web3Plugin, Web3Settings, Web3CementoTopic } from '../src';
 const Web3 = require('web3');
 const CocoTokenImport = require('./CocoToken.json')
@@ -29,30 +29,30 @@ describe('Web3Provider', () => {
             // Create Cemento Module
             console.log("#################################");
             console.log("web3.spec.ts -> Create Cemento Module");
-            const module = new CementoModule([
-                {
-                    name: 'CocoToken',
-                    import: {
-                        address: {
-                            development: CocoTokenImport.networks['1555175807639'].address,
-                        },
-                        raw: CocoTokenImport
-                    },
-                    enableDynamicStubs: true,
-                    provider: Web3Plugin
-                }
-            ]);
+            const module = new CementoModule({
+                'Paid': {
+                    connections: [{
+                        provider: Web3Plugin,
+                        defaultAccount,
+                        chainId: '4',
+                        name: 'web3'
+                    }],
+                    contracts: [{
+                        name: 'CocoToken',
+                        abi: CocoTokenImport.abi,
+                        address: '0xa729a3a5f65C9aF4934bfd0F4dfCE3898cE0ddA3',
+                        connectionName: ['web3'],
+                    }],
+                },
+            });
             console.log("web3.spec.ts -> bindContracts");
             const contracts = module.bindContracts();
             console.log("web3.spec.ts -> getDynamicContract");
-            const token = contracts.getDynamicContract('CocoToken');
             expect(contracts).not.toBe(null);
-            expect(token).not.toBe(null);
-
+            expect(Array.isArray(contracts)).toBe(true);
+            const token = contracts[0] as CementoContract & CementoProvider;
             tokenContract = token;
-
             token.onReady<Web3Settings>({
-                defaultAccount,
                 privateKey,
                 network,
                 web3

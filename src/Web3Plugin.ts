@@ -3,14 +3,15 @@ import Web3 from 'web3';
 import {
   IMethodOrEventCall,
   EventFilter,
-  ProviderInstance,
-  CementoProviderType
-} from '@decent-bet/cemento';
+  CementoProviderType,
+  CementoProvider,
+  CementoContract,
+  CementoSigner,
+  CementoTopic,
+  ProviderInstance
+} from '@paid-network/cemento';
 import { Web3Signer } from './Web3Signer';
 import { Web3Settings } from './Web3Settings';
-import { CementoProvider } from '@decent-bet/cemento';
-import { CementoContract, CementoSigner } from '@decent-bet/cemento';
-import { CementoTopic } from '@decent-bet/cemento';
 /**
  * Web3Plugin provider for Cemento
  */
@@ -21,6 +22,7 @@ export class Web3Plugin extends CementoProvider implements CementoContract {
   private instance: any;
   public defaultAccount: string;
   public address: string;
+  public chainId: string;
   private privateKey: string;
 
   public getProviderType(): CementoProviderType {
@@ -31,21 +33,20 @@ export class Web3Plugin extends CementoProvider implements CementoContract {
   }
   onReady<T>(settings: T & Web3Settings) {
     console.log("Web3Plugin->onReady");
-    const { privateKey, web3, network, defaultAccount } = settings;
+    const { privateKey, web3, network } = settings;
     this.privateKey = privateKey;
     this.web3 = web3;
     this.network = network;
-    this.defaultAccount = defaultAccount;
     this.connect();
   }
   public connect() {
     console.log("Web3Plugin->connect");
     if (this.web3 && this.network && this.defaultAccount) {
         this.instance = new this.web3.eth.Contract(
-            this.contractImport.raw.abi as any,
-            this.contractImport.address[this.network]
+            this.bindContract.abi as any,
+            this.bindContract.address
           );
-          this.address = this.contractImport.address[this.network];
+          this.address = this.bindContract.address;
           if (this.privateKey) {
             this.web3.eth.accounts.wallet.add(this.privateKey);
           }
@@ -91,7 +92,7 @@ export class Web3Plugin extends CementoProvider implements CementoContract {
 
   callMethod(name: string, args: any[]): any {
     let addr;
-    addr = this.contractImport.address[this.network];
+    addr = this.bindContract.address;
     return this.instance.methods[name](...args).call({
       from: addr
     });

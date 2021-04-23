@@ -11,8 +11,8 @@
         "experimentalDecorators": true,
         "preserveConstEnums": true,
         "emitDecoratorMetadata": true,
-        "declaration": true
-        
+        "declaration": true,
+        "preserveSymlinks": true,
     },
     "exclude": ["node_modules", "**/*.spec.ts", "spec"],
     "include": [
