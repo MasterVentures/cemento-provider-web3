@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/MasterVentures/cemento-provider-web3.git"
   },
-  "author": "",
+  "author": "PaidNetwork",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MasterVentures/cemento-provider-web3/issues"
