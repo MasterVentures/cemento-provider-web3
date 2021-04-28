@@ -1,6 +1,6 @@
 {
   "name": "@paid-network/cemento-provider-web3",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "Cemento Web3 provider",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
